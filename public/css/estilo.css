@@ -25,6 +25,10 @@ footer{
     border-color: #031430 !important;
 }
 
+.texto-azul{
+    color: #031430 !important;
+}
+
 .azul:hover{
     background-color: #053177 !important;
 }

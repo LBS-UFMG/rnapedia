@@ -19,3 +19,12 @@ footer{
 .bege{
     color: #fff9eb !important;
 }
+
+.azul{
+    background-color: #031430 !important;
+    border-color: #031430 !important;
+}
+
+.azul:hover{
+    background-color: #053177 !important;
+}

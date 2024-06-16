@@ -27,7 +27,7 @@
             <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">Explore</a></li>
         </ul>
         <ul class="nav">
-            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">by LBS</a></li>
+            <li class="nav-item"><a href="#" class="nav-link link-body-emphasis px-2">BLAST</a></li>
         </ul>
         </div>
     </nav>

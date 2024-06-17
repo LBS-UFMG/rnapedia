@@ -1,0 +1,40 @@
+CRITICAL - 2024-06-17 01:50:03 --> ArgumentCountError: explode() expects at least 2 arguments, 1 given
+[Method: GET, Route: entry/8WO8_B_A]
+in APPPATH/Controllers/Home.php on line 72.
+ 1 APPPATH/Controllers/Home.php(72): explode('GC_content: 0.0
+')
+ 2 APPPATH/Controllers/Home.php(102): App\Controllers\Home->getRna('8WO8_B_A')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->entry('8WO8_B_A')
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/diego/Documents/GitHub/rnapedia/public/index.php')
+CRITICAL - 2024-06-17 01:50:28 --> ErrorException: Array to string conversion
+[Method: GET, Route: entry/8WO8_B_A]
+in APPPATH/Controllers/Home.php on line 73.
+ 1 APPPATH/Controllers/Home.php(73): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Array to string conversion', '/Users/diego/Documents/GitHub/rnapedia/app/Controllers/Home.php', 73)
+ 2 APPPATH/Controllers/Home.php(102): App\Controllers\Home->getRna('8WO8_B_A')
+ 3 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->entry('8WO8_B_A')
+ 4 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 5 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 6 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+ 7 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+ 8 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+ 9 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/diego/Documents/GitHub/rnapedia/public/index.php')
+CRITICAL - 2024-06-17 01:53:17 --> ErrorException: Undefined array key "prop"
+[Method: GET, Route: entry/8WO8_B_A]
+in APPPATH/Views/entry.php on line 105.
+ 1 APPPATH/Views/entry.php(105): CodeIgniter\Debug\Exceptions->errorHandler(2, 'Undefined array key "prop"', '/Users/diego/Documents/GitHub/rnapedia/app/Views/entry.php', 105)
+ 2 SYSTEMPATH/View/View.php(234): include('/Users/diego/Documents/GitHub/rnapedia/app/Views/entry.php')
+ 3 SYSTEMPATH/View/View.php(237): CodeIgniter\View\View->CodeIgniter\View\{closure}()
+ 4 SYSTEMPATH/Common.php(1171): CodeIgniter\View\View->render('entry', [], true)
+ 5 APPPATH/Controllers/Home.php(108): view('entry', [...])
+ 6 SYSTEMPATH/CodeIgniter.php(933): App\Controllers\Home->entry('8WO8_B_A')
+ 7 SYSTEMPATH/CodeIgniter.php(509): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Home))
+ 8 SYSTEMPATH/CodeIgniter.php(355): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH/Boot.php(325): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH/Boot.php(67): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH/index.php(56): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+12 SYSTEMPATH/Commands/Server/rewrite.php(49): require_once('/Users/diego/Documents/GitHub/rnapedia/public/index.php')

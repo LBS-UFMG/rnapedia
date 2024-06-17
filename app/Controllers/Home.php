@@ -47,6 +47,80 @@ class Home extends BaseController
         return $info;
     }
 
+    private function getRna($id): Array 
+    {
+        $rna = [];
+
+        # sequencia do rna
+        $url = "./data/structures/$id/rna_sequence.txt";
+        $file_handle = fopen($url, 'r');
+        $lines = "";
+        if ($file_handle) {
+            while (($line = fgets($file_handle)) !== false) {
+                $lines = $lines.$line;
+            }
+            fclose($file_handle);
+        } else {
+            echo "Não foi possível abrir o arquivo.";
+        }
+        $rnaseq = $lines;
+
+        # propriedades rna
+        $url = "./data/structures/$id/rna_properties.txt";
+        $file_handle = fopen($url, 'r');
+        $lines = "";
+        if ($file_handle) {
+            while (($line = fgets($file_handle)) !== false) {
+                $tmp = explode(":",$line);
+                $rna[ $tmp[0] ] = $tmp[1];
+            }
+            fclose($file_handle);
+        } else {
+            echo "Não foi possível abrir o arquivo.";
+        }
+        
+        $rna["seq"] = $rnaseq;
+
+        return $rna;
+    }
+
+    private function getProtein($id): Array 
+    {
+        $protein = [];
+
+        # sequencia da proteina
+        $url = "./data/structures/$id/protein_sequence.txt";
+        $file_handle = fopen($url, 'r');
+        $lines = "";
+        if ($file_handle) {
+            while (($line = fgets($file_handle)) !== false) {
+                $lines = $lines.$line;
+            }
+            fclose($file_handle);
+        } else {
+            echo "Não foi possível abrir o arquivo.";
+        }
+        $proteinseq = $lines;
+
+        # propriedades protein
+        $url = "./data/structures/$id/protein_properties.txt";
+        $file_handle = fopen($url, 'r');
+        $lines = "";
+        if ($file_handle) {
+            while (($line = fgets($file_handle)) !== false) {
+                $tmp = explode(":",$line);
+                $protein[ $tmp[0] ] = $tmp[1];
+            }
+            fclose($file_handle);
+        } else {
+            echo "Não foi possível abrir o arquivo.";
+        }
+        
+        $protein["seq"] = $proteinseq;
+
+        return $protein;
+    }
+
     public function entry($id): string
     {
         $data = [];
@@ -61,8 +135,10 @@ class Home extends BaseController
         $data['info'] = $this->getInfo($id);
 
         // pega informações do rna
+        $data['rna'] = $this->getRna($id);
 
         // pega informações da proteína
+        $data['protein'] = $this->getProtein($id);
 
         // pega informações de contatos
 

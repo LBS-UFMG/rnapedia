@@ -121,6 +121,25 @@ class Home extends BaseController
         return $protein;
     }
 
+    private function getContacts($id): Array 
+    {
+        $contacts = [];
+
+        # contacts
+        $url = "./data/structures/$id/$id"."_interacoes.csv";
+        $file_handle = fopen($url, 'r');
+        if ($file_handle) {
+            while (($line = fgets($file_handle)) !== false) {
+                array_push($contacts, explode(",",$line));
+            }
+            fclose($file_handle);
+        } else {
+            echo "Não foi possível abrir o arquivo.";
+        }
+        
+        return $contacts;
+    }
+
     public function entry($id): string
     {
         $data = [];
@@ -141,6 +160,7 @@ class Home extends BaseController
         $data['protein'] = $this->getProtein($id);
 
         // pega informações de contatos
+        $data['contacts'] = $this->getContacts($id);
 
         return view('entry', $data);
     }

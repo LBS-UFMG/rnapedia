@@ -156,6 +156,34 @@
                     </div>
                 </div>
 
+                <div class="col-md-12 col-lg-12">
+                    <div class="thumbnail" style="border-left: #031430 5px solid; color: #ccc">
+                        <div class="caption">
+                            <h4 class="texto-azul m-2"><strong>Contacts</strong></h4>
+                            <table class="table table-condensed table-striped small">
+
+                                <?php $ct = 0; foreach($contacts as $contact): ?>
+                                <tr>
+                                    <?php $ct++; if($ct>1): ?>
+                                        <?php foreach($contact as $c): ?>
+                                            <?php if(strlen($c)>15): ?>
+                                                <td><?= number_format(floatval($c),2) ?>
+                                            <?php else: ?>
+                                                <td><?= $c ?>
+                                            <?php endif; ?>
+                                        <?php endforeach; ?>
+                                    <?php else: ?>
+                                        <th>Resn_1</th><th>ResID_1</th><th>Atm_1</th><th>AtmID_1</th>
+                                        <th>Resn_2</th><th>ResID_2</th><th>Atm_2</th><th>AtmID_2</th>
+                                        <th>Dist</th><th>Contact</th>
+                                    <?php endif; ?>
+
+                                </tr>
+                                <?php endforeach; ?>
+                            </table>
+                        </div>
+                    </div>
+                </div>
 
             </div>
         </div>

@@ -109,7 +109,7 @@
                                     <td>
                                         <div class="progress">
 
-                                            <div class="progress-bar" role="progressbar" style="width: <?= $rna['GC_content'] ?>%;"><?= $rna['GC_content'] ?>%</div>
+                                            <div class="progress-bar" role="progressbar" style="width: <?= intval($rna['GC_content']) ?>%;"><?= intval($rna['GC_content']) ?>%</div>
                                         </div>
                                     </td>
                                 </tr>

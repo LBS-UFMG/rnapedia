@@ -99,7 +99,7 @@ Agora edite o arquivo .env:
 
 Remova o comentário das linhas:
     CI_ENVIRONMENT = production
-    app.baseURL = 'http://bioinfo.dcc.ufmg.br/rnapedia'
+    app.baseURL = 'http://bioinfo.dcc.ufmg.br/rnapedia/index.php'
 
 ctrl+o e ctrl+x
 

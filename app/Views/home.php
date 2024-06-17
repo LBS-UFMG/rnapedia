@@ -16,8 +16,8 @@
             <h1 class="display-5 fw-bold text-body-emphasis lh-1 mb-3">Welcome to RNApedia</h1>
             <p class="lead"><b>RNApedia</b> is an innovative database designed to store and manage three-dimensional (3D) structures of protein-RNA complexes. RNApedia offer a comprehensive platform for researchers to access, share, and analyze 3D structural data, facilitating advancements in molecular biology, bioinformatics, and related fields.</p>
             <div class="d-grid gap-2 d-md-flex justify-content-md-start">
-                <a href="#try" class="btn btn-primary btn-lg px-4 me-md-2 azul">Explore</a>
-                <a href="<?= base_url('/documentation') ?>" class="btn btn-outline-secondary btn-lg px-4">Documentation</button>
+                <a href="<?= base_url('/explore') ?>" class="btn btn-primary btn-lg px-4 me-md-2 azul">Explore</a>
+                <a href="<?= base_url('/documentation') ?>" class="btn btn-outline-secondary btn-lg px-4">Documentation</a>
             </div>
         </div>
     </div>

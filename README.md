@@ -70,4 +70,51 @@ Additionally, make sure that the following extensions are enabled in your PHP:
 
 # Documentação PT-BR
 
-## Colocando em produção
+## Colocando em produção (Apache Server)
+No terminal, acesse o diretório raiz do Apache: 
+    cd /var/www/html
+
+Clone o repositório: 
+    git clone https://github.com/LBS-UFMG/rnapedia.git
+
+Acesse o novo diretório criado:
+    cd rnapedia
+
+Instale as bibliotecas usando composer:
+    composer install
+
+Mude o dono do diretório para o apache:
+    sudo chown -R www-data:www-data *
+
+Caso necessário, apague o cache na pasta /writable/cache
+    cd writable/cache
+    rm -rf *
+
+Agora vamos configurar o ambiente. Volte para a raiz do projeto e faça uma cópia de env:
+    cd /var/www/html/rnapedia
+    cp env .env
+
+Agora edite o arquivo .env:
+    nano .env
+
+Remova o comentário das linhas:
+    CI_ENVIRONMENT = production
+    app.baseURL = 'http://bioinfo.dcc.ufmg.br/rnapedia'
+
+ctrl+o e ctrl+x
+
+
+
+Confira se o site está configurado no Apache
+    sudo nano /etc/apache2/sites-available/000-default.conf
+
+Agora veja se a existe a seguinte linha (pressione ctrl+w e digite 'rnapedia'):
+    Alias /rnapedia /var/www/html/rnapedia/public
+
+Se não existir, adicione a linha e salve o arquivo com ctrl+o. Pressione ctrl+x para sair.
+
+Depois reinicie o apache com o comando:
+    sudo service apache2 restart
+
+
+
